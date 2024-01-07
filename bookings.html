@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room</title>
+    <link rel="stylesheet" href="bookings.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#" class="bpsu">
+                        <span class="bpsu-icon"><img src="/Thesis/Images/bpsu logo.png" alt="BPSU Logo" class="bpsu-logo"></span>
+                        <h3 class="bpsu-name">Bataan Peninsula State University Abucay Campus</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="menu-icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="menu-name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="room.html" class="menu-item room-item">
+                        <span class="menu-icon">
+                            <ion-icon name="bed-outline"></ion-icon>
+                        </span>
+                        <span class="menu-name menu-name-room">Room</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="student.html">
+                        <span class="menu-icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="menu-name">Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html">
+                        <span class="menu-icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                        <span class="menu-name">Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <span class="menu-icon"><ion-icon name="bookmark-outline" class="side-icon"></ion-icon></span>
+                        <span class="menu-name">Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transaction.html">
+                        <span class="menu-icon"><ion-icon name="card-outline"></ion-icon></span>
+                        <span class="menu-name">Transaction</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="report.html">
+                        <span class="menu-icon"><ion-icon name="document-outline"></ion-icon></span>
+                        <span class="menu-name">Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="menu-icon"><ion-icon name="log-out-outline"></ion-icon></ion-icon></span>
+                        <span class="menu-name">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Main Dashboard-->
+        <div class="main">
+            <!--Top bar-->
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-sharp"></ion-icon>
+                </div>
+                <!--Search-->
+                <div>
+                    <h2>Dormitory Management System</h2>
+                </div>
+                <!--User-->
+                <div class="user">
+                    <div class="username-role">
+                        <h3>Hanni</h3>
+                        <p>Admin</p>
+                    </div>
+                    <div class="user-profile">
+                        <h3>Alia cel</h3>
+                        <img src="https://i.pinimg.com/564x/5a/32/09/5a320916df9b8f49c2cc4b55ea3e394e.jpg" class = "user-profile" alt="User Profile">
+                    </div>
+                </div>
+            </div>
+
+            <!--Room Dashboard-->
+            <div class="main-dashboard">
+                <div class="room-navigation-container">
+                    <div class="room-navigation-links">
+                        <a href="#" class="nav-link" onclick="showRooms('all');">
+                            All Guest (<span id="total-all">0</span>)
+                        </a>
+                        <a href="#" class="nav-link" onclick="showRooms('pending');">
+                            Pending (<span id="total-pending">0</span>)
+                        </a>
+                        <a href="#" class="nav-link" onclick="showRooms('booked');">
+                            Booked (<span id="total-booked">0</span>)
+                        </a>
+                        <a href="#" class="nav-link" onclick="showRooms('canceled');">
+                            Canceled (<span id="total-canceled">0</span>)
+                        </a>
+                        <a href="#" class="nav-link" onclick="showRooms('refunded');">
+                            Refunded (<span id="total-refund">0</span>)
+                        </a>
+                    </div>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <div class="report-container">
+                    <!-- Button with icon and text -->
+                    <button class="generate-report-btn" onclick="openPopup()">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                      Add Bookings
+                    </button>
+                </div>
+            </div>
+            <!--Room Details-->
+            <div class="main-details">
+                <div id="room-details-container">
+                    <div class="top-header">
+                        <h2>Bookings</h2>
+                        <a href="#" class="view-all">View all</a>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td class="guest-id">Name</td>
+                                    <td>Date Order</td>
+                                    <td>Stay</td>
+                                    <td>Request</td>
+                                    <td>Room Type</td>
+                                    <td>Status</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-101</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>3 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#101</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-booked">Booked</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-102</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>6 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#102</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-booked">Booked</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-103</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>9 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#103</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-pending">Pending</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-104</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>3 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#201</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-canceled">Canceled</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-105</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>6 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#202</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-refunded">Refunded</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-106</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>9 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#203</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-refunded">Refunded</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-107</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>3 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#301</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-booked">Booked</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-108</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>6 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#302</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-pending">Pending</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-109</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>9 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#303</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-canceled">Canceled</td>
+                                    <td class="action"></td>
+                                </tr> 
+                                <tr>
+                                    <td class="guest">
+                                        <div class="guest-lists">
+                                            <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                        </div>
+                                        <div class="guest-no-name">
+                                            <p id="guest-number">GS-110</p>
+                                            <p id="guest-name">Lemuel Dionisio</p>
+                                            <p id="guest-student-id">22-01215</p>
+                                        </div>
+                                    </td>
+                                    <td class= "date-order">
+                                        <div class="date-time-order">
+                                            <h5>Monday, Sept 5th, 2023</h5>
+                                            <p>8:30am</p>
+                                        </div>
+                                    </td>
+                                    <td>3 months</td>
+                                    <td>
+                                        <a href="#" class="view-request">View Request</a>
+                                    </td>
+                                    <td>
+                                        <div class="room-no-name">
+                                            <p id="room-number">#101</p>
+                                            <p>Sample Room</p>
+                                        </div>
+                                    </td>
+                                    <td class="status-cell status-booked">Booked</td>
+                                    <td class="action"></td>
+                                </tr>  
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+
+    <div id="popupMenu" class="popup-menu">
+        <!-- Close button -->
+        <div class="close-button" onclick="closePopup()">
+          <ion-icon name="close-outline"></ion-icon>
+        </div>
+        <!-- Form -->
+        <div class="form-header">Add Guest</div>
+        <hr>
+        <br>
+        <form id="guestForm">
+            <div class="form-input-container">
+                <label>Guest name</label>
+                <input type="text" class="form-input" placeholder="Lemuel Dionisio" required>
+            </div>
+            <div class="form-input-container">
+                <label>Book date</label>
+                <input type="date" class="form-input" required>
+            </div>
+            <div class="form-input-container">
+                <label>Stay</label>
+                <input type="text" class="form-input" placeholder="1 month" required>
+            </div>
+            <div class="form-input-container">
+                <label>Request</label>
+                <input type="text" class="form-input request-form-container" placeholder="I want a quiet roommate" required>
+            </div>
+            <div class="form-input-container">
+                <label>Room type</label>
+                <input type="text" class="form-input" placeholder="Sample Room" required>
+            </div>
+            <div class="form-input-container status-list-container">
+                <label>Status</label>
+                <select class="form-input status-list" required>
+                    <option value="booked">Booked</option>
+                    <option value="cancelled">Cancelled</option>
+                    <option value="pending">Pending</option>
+                    <option value="refund">Refund</option>
+                </select>
+            </div>
+            <button type="button" class="form-button close-form-button" onclick="closePopup()">Close</button>
+            <button type="button" class="form-button save-changes" onclick="addGuest()">Save Changes</button>
+        </form>
+    </div>
+
+    <script>
+        // Menu Toggle
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+
+        // add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+
+        let currentCardIndex = 0;
+        const cards = document.querySelectorAll('.card');
+
+        function showCard(index) {
+            cards.forEach((card, i) => {
+                card.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextCard() {
+            currentCardIndex = (currentCardIndex + 1) % cards.length;
+            showCard(currentCardIndex);
+        }
+
+        function prevCard() {
+            currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+            showCard(currentCardIndex);
+        }
+
+        // Automatically transition to the next card every second
+        setInterval(nextCard, 3000);
+
+        // Apply dynamic styles based on the "Status" column
+        document.addEventListener('DOMContentLoaded', function () {
+            var statusCells = document.querySelectorAll('.status-cell');
+
+            statusCells.forEach(function (statusCell) {
+                var status = statusCell.textContent.trim().toLowerCase();
+                    
+                if (status === 'booked') {
+                    statusCell.classList.add('status-booked');
+                } else if (status === 'pending') {
+                    statusCell.classList.add('status-pending');
+                } else if (status === 'canceled') {
+                    statusCell.classList.add('status-canceled');
+                } else if (status === 'refund') {
+                    statusCell.classList.add('status-refund');
+                }
+            });
+        });
+
+        // Add "Edit" button to each row in the "Action" column
+        document.addEventListener('DOMContentLoaded', function () {
+            var rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(function (row) {
+                var actionCell = row.querySelector('.action');
+                var editButton = document.createElement('button');
+                editButton.innerHTML = '<ion-icon name="pencil-outline"></ion-icon>Edit';
+                editButton.classList.add('fancy-button');
+                actionCell.appendChild(editButton);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+        // Function to calculate and update total counts
+        function updateTotalCounts() {
+        const allTotal = document.querySelectorAll('.status-cell').length;
+        const pendingTotal = document.querySelectorAll('.status-cell.status-pending').length;
+        const bookedTotal = document.querySelectorAll('.status-cell.status-booked').length;
+        const canceledTotal = document.querySelectorAll('.status-cell.status-canceled').length;
+        const refundTotal = document.querySelectorAll('.status-cell.status-refund').length;
+
+        document.getElementById('total-all').textContent = allTotal;
+        document.getElementById('total-pending').textContent = pendingTotal;
+        document.getElementById('total-booked').textContent = bookedTotal;
+        document.getElementById('total-canceled').textContent = canceledTotal;
+        document.getElementById('total-refunded').textContent = refundTotal;
+        }
+
+        // Initial update
+        updateTotalCounts();
+        
+
+        // Additional logic to update totals when new rows are added/deleted dynamically
+        // You might need to adjust this based on how your application adds or removes rows.
+        // For example, you can call updateTotalCounts() after adding or removing a row dynamically.
+
+        // Example: If you dynamically add a new row with a status of "Pending"
+        // const newRow = document.createElement('tr');
+        // // Build your row content here
+        // document.querySelector('tbody').appendChild(newRow);
+        // updateTotalCounts();
+
+        // Example: If you dynamically remove a row
+        // const rowToRemove = document.querySelector('.status-cell.status-pending');
+        // rowToRemove.parentNode.removeChild(rowToRemove);
+        // updateTotalCounts();
+    });
+        document.addEventListener('DOMContentLoaded', function () {
+        // Function to show rooms based on status
+        function showRooms(status) {
+        const tableRows = document.querySelectorAll('#room-details-container tbody tr');
+
+        tableRows.forEach(row => {
+            const rowStatus = row.querySelector('td:nth-child(6)').textContent.trim().toLowerCase();
+            const statusMapping = {
+            'all': 'all',
+            'pending': 'pending',
+            'booked': 'booked',
+            'canceled': 'canceled',
+            'refunded': 'refunded',
+            };
+
+            if (status === 'all' || rowStatus === statusMapping[status]) {
+            row.style.display = '';
+            } else {
+            row.style.display = 'none';
+            }
+        });
+
+        updateTotalCounts();
+        }
+
+        // Function to update total counts
+        function updateTotalCounts() {
+        const allTotal = document.querySelectorAll('#room-details-container tbody tr').length;
+        const pendingTotal = document.querySelectorAll('.status-cell.status-pending').length;
+        const bookedTotal = document.querySelectorAll('.status-cell.status-booked').length;
+        const canceledTotal = document.querySelectorAll('.status-cell.status-canceled').length;
+        const refundTotal = document.querySelectorAll('.status-cell.status-refunded').length;
+
+        document.getElementById('total-all').textContent = allTotal;
+        document.getElementById('total-pending').textContent = pendingTotal;
+        document.getElementById('total-booked').textContent = bookedTotal;
+        document.getElementById('total-canceled').textContent = canceledTotal;
+        document.getElementById('total-refund').textContent = refundTotal;
+        }
+
+        // Search function
+        function filterRoomsBySearchTerm(searchTerm) {
+        const tableRows = document.querySelectorAll('#room-details-container tbody tr');
+
+        tableRows.forEach(row => {
+            const guest = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+            const dateOrder = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            const stay = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+            const request = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+            const roomType = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+            const status = row.querySelector('td:nth-child(6)').textContent.toLowerCase();
+
+            const isVisible = guest.includes(searchTerm) || dateOrder.includes(searchTerm) || stay.includes(searchTerm) || request.includes(searchTerm) || roomType.includes(searchTerm) || status.includes(searchTerm);
+
+            row.style.display = isVisible ? '' : 'none';
+        });
+
+        updateTotalCounts();
+        }
+
+        // Initial update
+        updateTotalCounts();
+
+        // Add click event listeners to navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            const status = link.textContent.trim().toLowerCase().split(' ')[0];
+            showRooms(status);
+        });
+        });
+
+        // Add input event listener to search input
+        const searchInput = document.querySelector('.search input');
+        searchInput.addEventListener('input', function () {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        filterRoomsBySearchTerm(searchTerm);
+        });
+
+        // Additional logic to update totals when new rows are added/deleted dynamically
+        // You might need to adjust this based on how your application adds or removes rows.
+
+        // Example: If you dynamically add a new row with a status of "Refund"
+        // const newRow = document.createElement('tr');
+        // // Build your row content here
+        // document.querySelector('tbody').appendChild(newRow);
+        // updateTotalCounts();
+
+        // Example: If you dynamically remove a row
+        // const rowToRemove = document.querySelector('.status-cell.status-refund');
+        // rowToRemove.parentNode.removeChild(rowToRemove);
+        // updateTotalCounts();
+    });
+
+      // Function to open the popup menu
+        function openPopup() {
+            const popupMenu = document.getElementById('popupMenu');
+            popupMenu.style.display = 'block';
+        }
+        // Function to close the popup menu
+        function closePopup() {
+            const popupMenu = document.getElementById('popupMenu');
+            popupMenu.style.display = 'none';
+        }
+
+        // Function to add a guest
+        function addGuest() {
+            // Get values from input fields
+            var guestName = document.getElementById('guestName').value;
+            var date = document.getElementById('date').value;
+            var stay = document.getElementById('date').value;
+            var roomType = document.getElementById('roomType').value;
+            var status = document.getElementById('status').value;
+
+            // Reference to the table body
+            var tableBody = document.querySelector('#room-details-container tbody');
+
+            // Create a new row
+            var newRow = tableBody.insertRow();
+
+            // Insert cells into the row
+            var guestCell = newRow.insertCell(0);
+            var roomTypeCell = newRow.insertCell(1);
+            var statusCell = newRow.insertCell(2);
+            var dateCell = newRow.insertCell(3);
+
+            // Set the cell content
+            guestCell.textContent = guestName;
+            roomTypeCell.textContent = roomType;
+            statusCell.textContent = status;
+            dateCell.textContent = date;
+
+            // Clear input fields after adding the guest
+            document.getElementById('guestName').value = '';
+            document.getElementById('roomType').value = '';
+            document.getElementById('status').value = '';
+            document.getElementById('date').value = '';
+        }
+        // Close the popup menu
+        closePopup();
+
+
+    </script>
+    
+</body>
+</html>

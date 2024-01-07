@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="transaction.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#" class="bpsu">
+                        <span class="bpsu-icon"><img src="/Thesis/Images/bpsu logo.png" alt="BPSU Logo" class="bpsu-logo"></span>
+                        <h3 class="bpsu-name">Bataan Peninsula State University Abucay Campus</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="menu-icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="menu-name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="room.html" class="menu-item room-item">
+                        <span class="menu-icon">
+                            <ion-icon name="bed-outline"></ion-icon>
+                        </span>
+                        <span class="menu-name menu-name-room">Room</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="student.html">
+                        <span class="menu-icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="menu-name">Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html">
+                        <span class="menu-icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                        <span class="menu-name">Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <span class="menu-icon"><ion-icon name="bookmark-outline" class="side-icon"></ion-icon></span>
+                        <span class="menu-name">Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transaction.html">
+                        <span class="menu-icon"><ion-icon name="card-outline"></ion-icon></span>
+                        <span class="menu-name">Transaction</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="report.html">
+                        <span class="menu-icon"><ion-icon name="document-outline"></ion-icon></span>
+                        <span class="menu-name">Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="menu-icon"><ion-icon name="log-out-outline"></ion-icon></ion-icon></span>
+                        <span class="menu-name">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Main Dashboard-->
+        <div class="main">
+            <!--Top bar-->
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-sharp"></ion-icon>
+                </div>
+                <div>
+                    <h2>Dormitory Management System</h2>
+                </div>
+                <!--User-->
+                <div class="user">
+                    <div class="username-role">
+                        <h3>Hanni</h3>
+                        <p>Admin</p>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://i.pinimg.com/564x/5a/32/09/5a320916df9b8f49c2cc4b55ea3e394e.jpg" class = "user-profile" alt="User Profile">
+                    </div>
+                </div>
+            </div>
+            <!--Billing and Transaction-->
+            <div class="main-top">
+                <div class="main-details">
+                    <div class="billing-container">
+                        <div class="billing-header">
+                            <h2>Billing</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="table-container">
+                            <table class="billingTable">
+                                <thead>
+                                    <tr>
+                                        <td>Billing ID</td>
+                                        <td>Student ID</td>
+                                        <td>Due date</td>
+                                        <td>Rent</td>
+                                        <td>Utility Usage</td>
+                                        <td>Charges</td>
+                                        <td>Status</td>
+                                        <td>Total amount</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>₱3,000</td>
+                                        <td>₱1,000</td>
+                                        <td>₱120</td>
+                                        <td>Paid</td>
+                                        <td class="total-amount"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <!--Invoice-->
+                    <div class="invoice-info-container">
+                        <div class="invoice-container">
+                            <div class="billing-header">
+                                <h2>Invoice</h2>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+                            <div class="table-container">
+                                <table class="billingTable">
+                                    <thead>
+                                        <tr>
+                                            <td>Invoice ID</td>
+                                            <td>Billing ID</td>
+                                            <td>Student ID</td>
+                                            <td>Date</td>
+                                            <td>Action</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>00001</td>
+                                            <td>00001</td>
+                                            <td>22-01215</td>
+                                            <td>01/03/2024</td>
+                                            <td><a href="#" class="receipt">Print</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>00001</td>
+                                            <td>00001</td>
+                                            <td>22-01215</td>
+                                            <td>01/03/2024</td>
+                                            <td><a href="#" class="receipt">Print</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>00001</td>
+                                            <td>00001</td>
+                                            <td>22-01215</td>
+                                            <td>01/03/2024</td>
+                                            <td><a href="#" class="receipt">Print</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>00001</td>
+                                            <td>00001</td>
+                                            <td>22-01215</td>
+                                            <td>01/03/2024</td>
+                                            <td><a href="#" class="receipt">Print</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>00001</td>
+                                            <td>00001</td>
+                                            <td>22-01215</td>
+                                            <td>01/03/2024</td>
+                                            <td><a href="#" class="receipt">Print</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="invoice-container">
+                            <h2>Analytics</h2>
+                        </div>
+                    </div>
+                </div>
+                <!--Transaction Table-->
+                <div class="main-details">
+                    <div class="transaction-table">
+                        <div class="billing-header">
+                            <h2>Transaction</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="table-container">
+                            <table class="billingTable">
+                                <thead>
+                                    <tr>
+                                        <td>Recent</td>
+                                        <td>Amount</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transaction-profile">
+                                            <div class="transaction-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="transaction-no-name">
+                                                <p id="transaction-name">Lemuel Dionisio</p>
+                                                <p class="transaction-id">22-01215</p>
+                                                <p id="transaction-date">03 Jan 2024, 11:59am</p>
+                                            </div>
+                                        </td>
+                                        <td class="transaction-amount">₱3,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="income-expenses">
+                        <div class="income">
+                            <p class="ptext">Income</p>
+                            <p class="total-transaction-amount"></p>
+                        </div>
+                        <div class="expense">
+                            <p class="ptext">Expenses</p>
+                            <p class="total-expenses">₱10000.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Income Dashboard-->
+            <div class="payment-container">
+                <div class="main-details">
+                    <div class="billing-container">
+                        <div class="billing-header">
+                            <h2>Payment</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="table-container">
+                            <table class="billingTable">
+                                <thead>
+                                    <tr>
+                                        <td>Payment ID</td>
+                                        <td>Billing ID</td>
+                                        <td>Student ID</td>
+                                        <td>Date</td>
+                                        <td>Method</td>
+                                        <td>Amount</td>
+                                        <td>Balance</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>00001</td>
+                                        <td>00001</td>
+                                        <td>22-01215</td>
+                                        <td>01/03/2024</td>
+                                        <td>Online</td>
+                                        <td>₱5000.00</td>
+                                        <td>₱3000.00</td>
+                                        <td><a href="#" class="receipt">Print</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Menu Toggle
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+
+        // add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+
+        // Billing table
+        document.addEventListener('DOMContentLoaded', function () {
+            calculateTotalAmount();
+        });
+
+        function calculateTotalAmount() {
+            const tables = document.getElementsByClassName('billingTable');
+
+            // Assuming you have only one table, use tables[0] to select the first table
+            const table = tables[0];
+            const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+            for (let i = 0; i < rows.length; i++) {
+                const rent = parseFloat(rows[i].getElementsByTagName('td')[3].textContent.replace('₱', '').replace(',', ''));
+                const utilityUsage = parseFloat(rows[i].getElementsByTagName('td')[4].textContent.replace('₱', '').replace(',', ''));
+                const charges = parseFloat(rows[i].getElementsByTagName('td')[5].textContent.replace('₱', '').replace(',', ''));
+
+                const totalAmount = rent + utilityUsage + charges;
+                rows[i].getElementsByTagName('td')[7].textContent = `₱${totalAmount.toFixed(2)}`;
+            }
+        }
+
+
+        
+        // Add "Edit" button to each row in the "Action" column
+        document.addEventListener('DOMContentLoaded', function () {
+            var rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(function (row) {
+                var actionCell = row.querySelector('.action');
+                var editButton = document.createElement('button');
+                editButton.innerHTML = '<ion-icon name="pencil-outline"></ion-icon>Edit';
+                editButton.classList.add('fancy-button');
+                actionCell.appendChild(editButton);
+            });
+        });
+
+        // Apply dynamic styles based on the "Status" column
+        document.addEventListener('DOMContentLoaded', function () {
+            var statusCells = document.querySelectorAll('.status-cell');
+
+            statusCells.forEach(function (statusCell) {
+                var status = statusCell.textContent.trim().toLowerCase();
+                
+                if (status === 'present') {
+                    statusCell.classList.add('status-present');
+                } else if (status === 'absent') {
+                    statusCell.classList.add('status-absent');
+                } else if (status === 'late') {
+                    statusCell.classList.add('status-late');
+                }
+            });
+        });
+        // Total transaction amount
+        function calculateTotalTransactionAmount() {
+            const transactionAmountElements = document.getElementsByClassName('transaction-amount');
+            let totalTransactionAmount = 0;
+
+            for (let i = 0; i < transactionAmountElements.length; i++) {
+                const amountText = transactionAmountElements[i].textContent.trim().replace('₱', '').replace(',', '');
+                const amountValue = parseFloat(amountText);
+
+                if (!isNaN(amountValue)) {
+                    totalTransactionAmount += amountValue;
+                }
+            }
+
+            // Update the total transaction amount in the HTML
+            const totalTransactionAmountElement = document.querySelector('.total-transaction-amount');
+            if (totalTransactionAmountElement) {
+                totalTransactionAmountElement.textContent = `₱${totalTransactionAmount.toFixed(2)}`;
+            }
+        }
+
+        // Call the function to calculate and update the total transaction amount
+        calculateTotalTransactionAmount();
+
+
+    </script>
+</body>
+</html>

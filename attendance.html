@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#" class="bpsu">
+                        <span class="bpsu-icon"><img src="/Thesis/Images/bpsu logo.png" alt="BPSU Logo" class="bpsu-logo"></span>
+                        <h3 class="bpsu-name">Bataan Peninsula State University Abucay Campus</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="menu-icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="menu-name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="room.html" class="menu-item room-item">
+                        <span class="menu-icon">
+                            <ion-icon name="bed-outline"></ion-icon>
+                        </span>
+                        <span class="menu-name menu-name-room">Room</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="student.html">
+                        <span class="menu-icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="menu-name">Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html">
+                        <span class="menu-icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                        <span class="menu-name">Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <span class="menu-icon"><ion-icon name="bookmark-outline" class="side-icon"></ion-icon></span>
+                        <span class="menu-name">Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transaction.html">
+                        <span class="menu-icon"><ion-icon name="card-outline"></ion-icon></span>
+                        <span class="menu-name">Transaction</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="report.html">
+                        <span class="menu-icon"><ion-icon name="document-outline"></ion-icon></span>
+                        <span class="menu-name">Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="menu-icon"><ion-icon name="log-out-outline"></ion-icon></ion-icon></span>
+                        <span class="menu-name">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Main Dashboard-->
+        <div class="main">
+            <!--Top bar-->
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-sharp"></ion-icon>
+                </div>
+                <div>
+                    <h2>Dormitory Management System</h2>
+                </div>
+                <!--User-->
+                <div class="user">
+                    <div class="username-role">
+                        <h3>Hanni</h3>
+                        <p>Admin</p>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://i.pinimg.com/564x/5a/32/09/5a320916df9b8f49c2cc4b55ea3e394e.jpg" class = "user-profile" alt="User Profile">
+                    </div>
+                </div>
+            </div>
+            <!--Date and Time-->
+            <div class="main-top">
+                <div id="dateContainer">
+                    <div class="time-icon">
+                        <div id="dayNightIcon"></div>
+                        <div class="realtime">
+                            <div id="time"></div>
+                            <p>Realtime Insight</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <h4>Today:</h4>
+                        <div id="fullDate"></div>
+                    </div>
+                </div>
+                <div class="room-details">
+                    <div class="main-dashboard-container">
+                        <!--Number of Rooms-->
+                        <div>
+                            <div class="num-of-rooms">5</div>
+                            <div class="container-num">Total Students</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="person-outline" class="main-dashboard-icon"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="main-dashboard-container">
+                        <!--Number of Rooms-->
+                        <div>
+                            <div class="num-of-rooms">5</div>
+                            <div class="container-num">Present</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="checkmark-circle-outline" class="main-dashboard-icon"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="main-dashboard-container">
+                        <!--Number of Rooms-->
+                        <div>
+                            <div class="num-of-rooms">5</div>
+                            <div class="container-num">Absent</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="close-circle-outline" class="main-dashboard-icon"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="main-dashboard-container">
+                        <!--Number of Rooms-->
+                        <div>
+                            <div class="num-of-rooms">5</div>
+                            <div class="container-num">Late Arrivals</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="time-outline" class="main-dashboard-icon"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="main-dashboard-container">
+                        <!--Number of Rooms-->
+                        <div>
+                            <div class="num-of-rooms">5</div>
+                            <div class="container-num">Number of Visitors</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="people-outline" class="main-dashboard-icon"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Attendance Dashboard-->
+            <div class="main-details">
+                <div class="attendance-container">
+                    <div class="attendance">
+                        <h2>Student Attendance</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Attendance No.</td>
+                                    <td>Student ID</td>
+                                    <td>Status</td>
+                                    <td>Time In</td>
+                                    <td>Time Out</td>
+                                    <td>Date</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-present">Present</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-late">Late</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-absent">Absent</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-present">Present</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-absent">Absent</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-present">Present</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-late">Late</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-present">Present</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-late">Late</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                                <tr>
+                                    <td>00001</td>
+                                    <td>22-01215</td>
+                                    <td class="status-cell status-present">Present</td>
+                                    <td>11:47pm</td>
+                                    <td>11:47pm</td>
+                                    <td>12/21/2023</td>
+                                    <td class="action"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--Maintenance-->
+                <div class="visitor-container">
+                    <div class="maintenance">
+                        <h2>Visitor Log</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Room No.</td>
+                                    <td>Last Name</td>
+                                    <td>First Name</td>
+                                    <td>Middle Name</td>
+                                    <td>Purpose</td>
+                                    <td>Time In</td>
+                                    <td>Time Out</td>
+                                    <td>Date</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Dionisio</td>
+                                    <td>Lemuel</td>
+                                    <td>Quiambao</td>
+                                    <td>Delivery</td>
+                                    <td>9:58am</td>
+                                    <td>10:02am</td>
+                                    <td>01/02/2024</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        // Menu Toggle
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+
+        // add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+
+        // Date
+        function updateDate() {
+            const dateContainer = document.getElementById('dateContainer');
+            const dayNightIcon = document.getElementById('dayNightIcon');
+            const timeElement = document.getElementById('time');
+            const fullDateElement = document.getElementById('fullDate');
+
+            const now = new Date();
+            const hours = now.getHours();
+            const sec = now.getSeconds();
+
+            // Set day/night icon based on the time
+            dayNightIcon.textContent = hours >= 6 && hours < 18 ? '🔆' : '🌙';
+
+            // Display time
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit'});
+            timeElement.textContent = timeString;
+
+            // Display full date
+            const dateString = now.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            fullDateElement.textContent = dateString;
+        }
+
+        // Update the date every second
+        setInterval(updateDate, 1000);
+
+        // Initial update
+        updateDate();
+        
+        // Function to update time and check for dark mode
+        function updateTime() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+
+            // Check if it's night (6:00 pm or later)
+            var isNight = hours >= 18 || hours < 6;
+
+            // Apply dark mode class to #dateContainer
+            document.getElementById('dateContainer').classList.toggle('dark-mode', isNight);
+
+            // Update time and date here
+            // ...
+
+            // Update every 1 minute (adjust as needed)
+            setTimeout(updateTime, 60000);
+        }
+
+        // Initial call to set up time and dark mode
+        updateTime();
+        
+        // Add "Edit" button to each row in the "Action" column
+        document.addEventListener('DOMContentLoaded', function () {
+            var rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(function (row) {
+                var actionCell = row.querySelector('.action');
+                var editButton = document.createElement('button');
+                editButton.innerHTML = '<ion-icon name="pencil-outline"></ion-icon>Edit';
+                editButton.classList.add('fancy-button');
+                actionCell.appendChild(editButton);
+            });
+        });
+
+        // Apply dynamic styles based on the "Status" column
+        document.addEventListener('DOMContentLoaded', function () {
+            var statusCells = document.querySelectorAll('.status-cell');
+
+            statusCells.forEach(function (statusCell) {
+                var status = statusCell.textContent.trim().toLowerCase();
+                
+                if (status === 'present') {
+                    statusCell.classList.add('status-present');
+                } else if (status === 'absent') {
+                    statusCell.classList.add('status-absent');
+                } else if (status === 'late') {
+                    statusCell.classList.add('status-late');
+                }
+            });
+    });
+    </script>
+</body>
+</html>

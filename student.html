@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#" class="bpsu">
+                        <span class="bpsu-icon"><img src="/Thesis/Images/bpsu logo.png" alt="BPSU Logo" class="bpsu-logo"></span>
+                        <h3 class="bpsu-name">Bataan Peninsula State University Abucay Campus</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="menu-icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="menu-name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="room.html" class="menu-item room-item">
+                        <span class="menu-icon">
+                            <ion-icon name="bed-outline"></ion-icon>
+                        </span>
+                        <span class="menu-name menu-name-room">Room</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="student.html">
+                        <span class="menu-icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="menu-name">Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance.html">
+                        <span class="menu-icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                        <span class="menu-name">Attendance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookings.html">
+                        <span class="menu-icon"><ion-icon name="bookmark-outline" class="side-icon"></ion-icon></span>
+                        <span class="menu-name">Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transaction.html">
+                        <span class="menu-icon"><ion-icon name="card-outline"></ion-icon></span>
+                        <span class="menu-name">Transaction</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="report.html">
+                        <span class="menu-icon"><ion-icon name="document-outline"></ion-icon></span>
+                        <span class="menu-name">Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="menu-icon"><ion-icon name="log-out-outline"></ion-icon></ion-icon></span>
+                        <span class="menu-name">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Main Dashboard-->
+        <div class="main">
+            <!--Top bar-->
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-sharp"></ion-icon>
+                </div>
+                <div>
+                    <h2>Dormitory Management System</h2>
+                </div>
+                <!--User-->
+                <div class="user">
+                    <div class="username-role">
+                        <h3>Hanni</h3>
+                        <p>Admin</p>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://i.pinimg.com/564x/5a/32/09/5a320916df9b8f49c2cc4b55ea3e394e.jpg" class = "user-profile" alt="User Profile">
+                    </div>
+                </div>
+            </div>
+            <!--Student Dashboard-->
+            <div class="main-details">
+                <div class="top-container">
+                    <div class="list-add">
+                        <h2>Student List</h2>
+                        <div class="add-container">
+                            <!-- Button with icon and text -->
+                            <button class="generate-add-btn" onclick="openPopup()">
+                                <ion-icon name="add-outline"></ion-icon>
+                                Add Student
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-card-container">
+                    <div class="main-card-container">
+                        <!--Number of Rooms-->
+                        <div>
+                            <div class="num-of-rooms">5</div>
+                            <div class="container-num">Total Student</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="person-outline" class="main-card-icon"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="main-card-container">
+                        <!--Number of Bookings-->
+                        <div>
+                            <div class="num-of-rooms">3</div>
+                            <div class="container-num">Female</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="woman-outline" class="main-card-icon"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="main-card-container">
+                        <!--Number of Present-->
+                        <div>
+                            <div class="num-of-rooms">10</div>
+                            <div class="container-num">Male</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="man-outline" class="main-card-icon"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="main-card-container">
+                        <!--Number of Present-->
+                        <div>
+                            <div class="num-of-rooms">10</div>
+                            <div class="container-num">Birthday Today</div>
+                        </div>
+                        <div class="num-room-icon">
+                            <ion-icon name="calendar-outline" class="main-card-icon"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-table">
+                    <div class="table-navigation">
+                        <div class="student-navigation-container">
+                            <div class="student-navigation-links">
+                                <a href="#" class="nav-link" onclick="showRooms('all');">
+                                    All(<span id="total-all">0</span>)
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sort">
+                            <div class="search">
+                                <label>
+                                    <input type="text" placeholder="Search here">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                </label>
+                            </div>
+                            <div class="room-list-container">
+                                <select class="room-list" required>
+                                    <option value="placeholder" disabled selected>Select Room</option>
+                                    <option value="booked" class="option-value">Room 101</option>
+                                    <option value="cancelled" class="option-value">Room 102</option>
+                                    <option value="pending" class="option-value">Room 103</option>
+                                    <option value="refund" class="option-value">Room 104</option>
+                                    <option value="refund" class="option-value">Room 105</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="attendance-container">
+                        <div class="attendance">
+                            <h2>Students</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td class="student-table-name">Name</td>
+                                        <td>Email</td>
+                                        <td>Address</td>
+                                        <td>Contact no.</td>
+                                        <td>Room no.</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="guest">
+                                            <div class="guest-lists">
+                                                <img src="https://sbrrb.hawaii.gov/wp-content/uploads/blank-photo.jpg" alt="Guest" class="guest-pic">
+                                            </div>
+                                            <div class="guest-no-name">
+                                                <p id="student-id">22-01215</p>
+                                                <p id="student-name">Lemuel Dionisio</p>
+                                                <p id="student-sex">Male</p>
+                                            </div>
+                                        </td>
+                                        <td>lqdionisio@bpsu.edu.ph</td>
+                                        <td>Orani, Bataan</td>
+                                        <td>09609166635</td>
+                                        <td>101</td>
+                                        <td class="action"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        // Menu Toggle
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+
+        // add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+
+        // Add "Edit" button to each row in the "Action" column
+        document.addEventListener('DOMContentLoaded', function () {
+            var rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(function (row){
+                var actionCell = row.querySelector('.action');
+                var editButton = document.createElement('button');
+                editButton.innerHTML = '<ion-icon name="ellipsis-horizontal-outline"></ion-icon>';
+                editButton.classList.add('fancy-button');
+                actionCell.appendChild(editButton);
+            });
+        });
+    </script>
+</body>
+</html>

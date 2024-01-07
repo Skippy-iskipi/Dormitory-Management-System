@@ -1,0 +1,476 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+.bpsu{
+    padding: 10px 0 0 3px;
+    display: flex;
+    gap: 5px;
+    max-height: 50px;
+}
+.bpsu-logo{
+    width: 70%;
+    height: 80%;
+}
+.bpsu-name{
+    padding-top: 5px;
+    font-size: 0.8rem;
+}
+.navigation.active
+{
+    width: 65.21px;
+    overflow: hidden;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #9a0000;
+    transition: 0.5s;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background: #ffffff;
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+    color: #9a0000;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.navigation ul li a .menu-icon, .bpsu-icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.navigation ul li a .menu-icon ion-icon{
+    font-size: 1.75em;
+}
+.navigation ul li a .menu-name{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 60px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px white;
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px white;
+    pointer-events: none;
+}
+
+/* Main */
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: white;
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 65px);
+    left: 65px;
+}
+
+.topbar{
+    position: sticky;
+    top: 0;
+    z-index: 100; 
+    background: #9a0000;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.topbar h2{
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.toggle{
+    color: white;
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.user{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    color: white;
+    font-size: 0.8rem;
+}
+.username-role{
+    margin-top: 3px;
+}
+.user-profile{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.user-profile img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.left-container{
+    border: 2px solid black;
+}
+
+/*Main Dashboard*/
+.main-details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 30px;
+}
+
+/*Date*/
+.main-top{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    gap: 30px;
+    padding: 20px;
+}
+.main-dashboard-container{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #939393;
+}
+.main-top .main-dashboard-container .num-of-rooms{
+    position: relative;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #830000;
+}
+.main-top .main-dashboard-container .container-num{
+    color: #000000;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+.main-top .main-dashboard-container .main-dashboard-icon{
+    font-size: 2.5rem;
+    color: #000000;
+}
+.main-dashboard-container:hover{
+    box-shadow: 0 0 15px #9a0000;
+    background: #830000;
+    cursor: pointer;
+}
+.main-top .main-dashboard-container:hover .num-of-rooms,
+.main-top .main-dashboard-container:hover .container-num,
+.main-top .main-dashboard-container:hover .main-dashboard-icon{
+    color: white;
+    transform: scale(1.05);
+}
+.room-details {
+    padding-left: 20px;
+    border-left: 2px solid #9a0000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+#dateContainer {
+    box-shadow: 0 0 10px #939393;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#dayNightIcon{
+    font-size: 4em;
+}
+.time-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#time{
+    color: #830000;
+    font-size: 1.7rem;
+}
+.realtime p{
+    font-size: 0.8rem;
+    color: #939393;
+    padding-top: 2px;
+}
+.realtime{
+    text-align:left;
+    padding: 5px 0 0 5px;
+}
+.date{
+    font-size: 1.3rem;
+    text-align: left;
+}
+#fullDate{
+    padding: 5px 0 0 15px;
+}
+/* Dark mode styles */
+#dateContainer.dark-mode{
+    background-color: #333;
+    color: #fff;
+}
+#dateContainer.dark-mode #time {
+    color: #fff; 
+}
+#dateContainer{
+    transition: background-color 0.5s;
+}
+#dateContainer.dark-mode:hover{
+    box-shadow: 0 0 30px #333;
+    cursor: pointer;
+}
+/*Attendance Log*/
+.main-details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+.main-details .attendance-container, 
+.main-details .visitor-container{
+    position: relative;
+    display: grid;
+    min-height: 200px;
+    max-height: 350px;
+    overflow: hidden; /* Hide the overflow for the entire container */
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px #939393;
+    border-radius: 20px;
+}
+.main-details .table-container, 
+.main-details .visitor-container{
+    overflow-y: auto; /* Enable vertical scrolling for the tbody */
+}
+.attendance, .maintenance{
+    position: sticky;
+    top: 0;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.attendance, .maintenance h2{
+    font-weight: 600;
+    color: black;
+}
+.view-all{
+    position: relative;
+    padding: 5px 10px;
+    background: #9a0000;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+}
+.view-all:hover{
+    background-color: #830000;
+
+}
+.main-details table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+.main-details table thead{
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+.main-details table thead td{ 
+    text-align: center;
+    font-weight: 600;
+}
+.main-details .attendance-container table tr{
+    text-align: center;
+    color: #000000;
+    border-bottom: 1px solid #939393;
+}
+.main-details .visitor-container table tr{
+    text-align: center;
+    color: #000000;
+    border-bottom: 1px solid #939393;
+}
+.main-details .attendance-container table tr:last-child{
+    border-bottom: none;
+}
+.main-details .visitor-container table tr:last-child{
+    border-bottom: none;
+}
+.main-details .attendance-container table tbody tr:hover{
+    background: #9a0000;
+    color: white;
+    cursor: pointer;
+}
+.main-details .visitor-container table tbody tr:hover{
+    background: #9a0000;
+    color: white;
+    cursor: pointer;
+}
+.main-details .attendance-container table tr td{
+    padding: 10px;
+}
+.main-details .visitor-container table tr td{
+    padding: 10px;
+}
+.action button{
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    color: #9a0000;
+    padding: 5px 10px;
+    border: 2px solid #9a0000;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
+}
+.action button ion-icon {
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+.status-cell {
+    margin: 7px auto;
+    border: 1px solid;
+    border-radius: 4px;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+}
+
+.status-present {
+    border-radius: 50px;
+    background-color: #00ff0041;
+    color: #00ff00; 
+    border-color: #00ff00; 
+}
+
+.status-absent {
+    border-radius: 50px;
+    background-color: #ff000041;
+    color: #ff0000; 
+    border-color: #ff0000; 
+}
+
+.status-late {
+    border-radius: 50px;
+    background-color: #80808041;
+    color: #808080; 
+    border-color: #808080;
+}
+
+@media (max-width: 600px){
+    .navigation{
+        width: 0;
+        overflow: hidden;
+        transition: 0.5s
+    }
+    .navigation.active {
+        width: 65.21px;
+    }
+    .topbar h2{
+        font-size: 0.9rem;
+    }
+    .main {
+        width: 100%;
+        left: 0;
+    }
+    .main-details{
+        grid-template-columns: repeat(1 ,1fr);
+    }
+}
